@@ -51,5 +51,8 @@ frontend angular app can be brought up by navigating to __/server-status-webapp_
 * created a container registry to upload docker containers to
 * created a sql server database
 
+    <img src="https://github.com/tapjyotmakkar/DotNetCoreHealth/blob/master/azure_resources.JPG">
+
 * create a kubernetes service to host all the artifacts
 
+    <img src="https://github.com/tapjyotmakkar/DotNetCoreHealth/blob/master/k8_resources.JPG">
