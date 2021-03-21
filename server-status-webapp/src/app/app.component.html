@@ -1,0 +1,85 @@
+<div class="container-fluid">
+  <div class="d-lg-flex flex-wrap flex-row container pt-3">
+    <div class="col-lg-3 col-lg-6 col-lg-12">
+      <p class="pt-3">
+        XYZ Co dashboard displays the health of microservices its softwares are dependent
+      </p>
+    </div>
+  </div>
+  <div class="flex-wrap flex-row container">
+    <h1>Server 1</h1>
+    <div class="table-responsive-lg">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Server</th>
+            <th scope="col">Status</th>
+            <th scope="col">Date</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let serverStatus of serverStatuses" [ngClass]="serverStatus.status == 'Healthy' ? 'bg-success' : 'bg-danger'">
+            <td style="color: #ffffff;">{{serverStatus.id}}</td>
+            <td style="color: #ffffff;">{{serverStatus.name}}</td>
+            <td style="color: #ffffff;">{{serverStatus.status}}</td>
+            <td style="color: #ffffff;">{{serverStatus.date}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="flex-wrap flex-row container">
+    <h1>Server 2</h1>
+    <div class="table-responsive-lg">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Server</th>
+            <th scope="col">Status</th>
+            <th scope="col">Date</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- <tr *ngFor="let serverStatus of serverStatuses" [ngClass]="serverStatus.status == 'Healthy' ? 'bg-success' : 'bg-danger'">
+            <th scope="row">{{serverStatus.id}}</th>
+            <td>{{serverStatus.name}}</td>
+            <td>{{serverStatus.status}}</td>
+            <td>{{serverStatus.date}}</td>
+          </tr> -->
+          <tr class="bg-success">
+            <td style="color: #ffffff;">1</td>
+            <td style="color: #ffffff;">microservice2</td>
+            <td style="color: #ffffff;">Unhealthy</td>
+            <td style="color: #ffffff;">21 Mar 2021 11:00</td>
+          </tr>
+          <tr class="bg-danger">
+            <td style="color: #ffffff;">2</td>
+            <td style="color: #ffffff;">microservice2</td>
+            <td style="color: #ffffff;">Unhealthy</td>
+            <td style="color: #ffffff;">21 Mar 2021 11:00</td>
+          </tr>
+          <tr class="bg-success">
+            <td style="color: #ffffff;">3</td>
+            <td style="color: #ffffff;">microservice3</td>
+            <td style="color: #ffffff;">Unhealthy</td>
+            <td style="color: #ffffff;">21 Mar 2021 11:00</td>
+          </tr>
+          <tr class="bg-danger">
+            <td style="color: #ffffff;">4</td>
+            <td style="color: #ffffff;">microservice4</td>
+            <td style="color: #ffffff;">Unhealthy</td>
+            <td style="color: #ffffff;">21 Mar 2021 11:00</td>
+          </tr>
+          <tr class="bg-success">
+            <td style="color: #ffffff;">5</td>
+            <td style="color: #ffffff;">microservice5</td>
+            <td style="color: #ffffff;">Unhealthy</td>
+            <td style="color: #ffffff;">21 Mar 2021 11:00</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

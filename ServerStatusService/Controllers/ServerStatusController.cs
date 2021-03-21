@@ -29,8 +29,8 @@ namespace ServerStatusService.Controllers
         [HttpGet]
         public async Task<IEnumerable<ServerStatus>> Get()
         {
-            var serverStatus = await _serverStatusDbContext.Statuses
-                 .Where(x => x.Date.Date == DateTime.Today.Date).OrderByDescending(x => x.Date).ToListAsync();
+            var serverStatus = await _serverStatusDbContext.Statuses.Where(x => x.Date.Date == DateTime.Today.Date).ToListAsync();
+            serverStatus = serverStatus.OrderByDescending(x => x.Date).Take(5).ToList();
             return serverStatus;
         }
     }

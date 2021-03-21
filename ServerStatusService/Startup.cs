@@ -19,6 +19,14 @@ namespace ServerStatusService
 
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddCors(options =>
+            {
+                options.AddPolicy("ServerStatusPolicy", builder =>
+                {
+                    builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();
+                });
+            });
+
             services.AddControllers();
 
             services.AddEntityFrameworkSqlServer()
@@ -41,6 +49,8 @@ namespace ServerStatusService
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            app.UseCors("ServerStatusPolicy");
 
             app.UseHttpsRedirection();
 
