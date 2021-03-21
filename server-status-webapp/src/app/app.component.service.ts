@@ -21,6 +21,6 @@ export class AppComponentService {
     constructor(private httpClient: HttpClient) { }
 
     public getServerStatuses(): Observable<ServerStatuses> {
-        return this.httpClient.get<ServerStatuses>('https://localhost:44351/serverstatus');
+        return this.httpClient.get<ServerStatuses>('http://20.193.32.243/serverstatus');
     }
 }

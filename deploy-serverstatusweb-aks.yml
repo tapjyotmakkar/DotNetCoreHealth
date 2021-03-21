@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: serverstatuswebapp
+  name: serverstatuswebapp
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: serverstatuswebapp
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: serverstatuswebapp
+    spec:
+      containers:
+      - image: tjdockeracr.azurecr.io/serverstatuswebapp:v1
+        name: serverstatuswebapp
+        imagePullPolicy: Always
+        resources: {}
+        ports:
+          - containerPort: 80
+status: {}
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: serverstatuswebapp
+  labels:
+    run: serverstatuswebapp
+spec:
+  ports:
+  - port: 80
+    protocol: TCP
+  selector:
+    app: serverstatuswebapp
+  type: LoadBalancer

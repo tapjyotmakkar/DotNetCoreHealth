@@ -19,7 +19,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let serverStatus of serverStatuses" [ngClass]="serverStatus.status == 'Healthy' ? 'bg-success' : 'bg-danger'">
+          <tr *ngFor="let serverStatus of serverStatuses.microService1Status" [ngClass]="serverStatus.status == 'Healthy' ? 'bg-success' : 'bg-danger'">
             <td style="color: #ffffff;">{{serverStatus.id}}</td>
             <td style="color: #ffffff;">{{serverStatus.name}}</td>
             <td style="color: #ffffff;">{{serverStatus.status}}</td>
@@ -42,41 +42,11 @@
           </tr>
         </thead>
         <tbody>
-          <!-- <tr *ngFor="let serverStatus of serverStatuses" [ngClass]="serverStatus.status == 'Healthy' ? 'bg-success' : 'bg-danger'">
-            <th scope="row">{{serverStatus.id}}</th>
-            <td>{{serverStatus.name}}</td>
-            <td>{{serverStatus.status}}</td>
-            <td>{{serverStatus.date}}</td>
-          </tr> -->
-          <tr class="bg-success">
-            <td style="color: #ffffff;">1</td>
-            <td style="color: #ffffff;">microservice2</td>
-            <td style="color: #ffffff;">Unhealthy</td>
-            <td style="color: #ffffff;">21 Mar 2021 11:00</td>
-          </tr>
-          <tr class="bg-danger">
-            <td style="color: #ffffff;">2</td>
-            <td style="color: #ffffff;">microservice2</td>
-            <td style="color: #ffffff;">Unhealthy</td>
-            <td style="color: #ffffff;">21 Mar 2021 11:00</td>
-          </tr>
-          <tr class="bg-success">
-            <td style="color: #ffffff;">3</td>
-            <td style="color: #ffffff;">microservice3</td>
-            <td style="color: #ffffff;">Unhealthy</td>
-            <td style="color: #ffffff;">21 Mar 2021 11:00</td>
-          </tr>
-          <tr class="bg-danger">
-            <td style="color: #ffffff;">4</td>
-            <td style="color: #ffffff;">microservice4</td>
-            <td style="color: #ffffff;">Unhealthy</td>
-            <td style="color: #ffffff;">21 Mar 2021 11:00</td>
-          </tr>
-          <tr class="bg-success">
-            <td style="color: #ffffff;">5</td>
-            <td style="color: #ffffff;">microservice5</td>
-            <td style="color: #ffffff;">Unhealthy</td>
-            <td style="color: #ffffff;">21 Mar 2021 11:00</td>
+          <tr *ngFor="let serverStatus of serverStatuses.microService2Status" [ngClass]="serverStatus.status == 'Healthy' ? 'bg-success' : 'bg-danger'">
+            <td style="color: #ffffff;">{{serverStatus.id}}</td>
+            <td style="color: #ffffff;">{{serverStatus.name}}</td>
+            <td style="color: #ffffff;">{{serverStatus.status}}</td>
+            <td style="color: #ffffff;">{{serverStatus.date}}</td>
           </tr>
         </tbody>
       </table>

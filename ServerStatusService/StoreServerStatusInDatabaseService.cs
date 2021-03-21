@@ -35,23 +35,39 @@ namespace ServerStatusService
 
         private async void TimerCallback(object sender)
         {
-            var serverStatus = new ServerStatus { Date = DateTime.Now, Name = "microservice1" };
+            var microservice1Status = new ServerStatus { Date = DateTime.Now, Name = "microservice1" };
             var client = _httpClientFactory.CreateClient("microservice1");
             var request = new HttpRequestMessage(HttpMethod.Get, string.Empty);
             var response = await client.SendAsync(request);
             if (response.IsSuccessStatusCode)
             {
                 var result = await response.Content.ReadAsStringAsync();
-                serverStatus.Status = result;
+                microservice1Status.Status = result;
             }
             else
             {
-                serverStatus.Status = "Unhealthy";
+                microservice1Status.Status = "Unhealthy";
             }
+
+            var microservice2Status = new ServerStatus { Date = DateTime.Now, Name = "microservice2" };
+            var microservice2Client = _httpClientFactory.CreateClient("microservice2");
+            var microservice2Request = new HttpRequestMessage(HttpMethod.Get, string.Empty);
+            var microservice2Response = await microservice2Client.SendAsync(microservice2Request);
+            if (microservice2Response.IsSuccessStatusCode)
+            {
+                var microservice2Result = await microservice2Response.Content.ReadAsStringAsync();
+                microservice2Status.Status = microservice2Result;
+            }
+            else
+            {
+                microservice2Status.Status = "Unhealthy";
+            }
+
             using (var scope = _services.CreateScope())
             {
                 var serverStatusDbContext = scope.ServiceProvider.GetRequiredService<ServerStatusDbContext>();
-                serverStatusDbContext.Statuses.Add(serverStatus);
+                serverStatusDbContext.Statuses.Add(microservice1Status);
+                serverStatusDbContext.Statuses.Add(microservice2Status);
                 await serverStatusDbContext.SaveChangesAsync();
             }
             

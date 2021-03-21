@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Work\\insight\\microservice1\\microservice1.csproj",
+      "projectUniqueName": "C:\\Work\\insight\\DotNetCoreHealth\\microservice1\\microservice1.csproj",
       "projectName": "microservice1",
-      "projectPath": "C:\\Work\\insight\\microservice1\\microservice1.csproj",
+      "projectPath": "C:\\Work\\insight\\DotNetCoreHealth\\microservice1\\microservice1.csproj",
       "packagesPath": "C:\\Users\\tapjy\\.nuget\\packages\\",
-      "outputPath": "C:\\Work\\insight\\microservice1\\obj\\",
+      "outputPath": "C:\\Work\\insight\\DotNetCoreHealth\\microservice1\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\tapjy\\AppData\\Roaming\\NuGet\\NuGet.Config",

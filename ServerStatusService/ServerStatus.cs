@@ -1,9 +1,16 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using System;
+using System.Collections.Generic;
 
 namespace ServerStatusService
 {
+    public class ServerStatuses
+    {
+        public List<ServerStatus> MicroService1Status { get; set; }
+        public List<ServerStatus> MicroService2Status { get; set; }
+    }
+
     public class ServerStatus
     {
         public int Id { get; set; }

@@ -27,11 +27,13 @@ namespace ServerStatusService.Controllers
         }
 
         [HttpGet]
-        public async Task<IEnumerable<ServerStatus>> Get()
+        public async Task<ServerStatuses> Get()
         {
+            var serverStatuses = new ServerStatuses();
             var serverStatus = await _serverStatusDbContext.Statuses.Where(x => x.Date.Date == DateTime.Today.Date).ToListAsync();
-            serverStatus = serverStatus.OrderByDescending(x => x.Date).Take(5).ToList();
-            return serverStatus;
+            serverStatuses.MicroService1Status = serverStatus.Where(x => x.Name == "microservice1").OrderByDescending(x => x.Date).Take(5).ToList();
+            serverStatuses.MicroService2Status = serverStatus.Where(x => x.Name == "microservice2").OrderByDescending(x => x.Date).Take(5).ToList();
+            return serverStatuses;
         }
     }
 }

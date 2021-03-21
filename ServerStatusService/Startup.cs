@@ -40,6 +40,11 @@ namespace ServerStatusService
                 client.BaseAddress = new Uri("http://20.193.59.230/health");
             });
 
+            services.AddHttpClient("microservice2", client =>
+            {
+                client.BaseAddress = new Uri("http://20.193.32.167/health");
+            });
+
             services.AddHostedService<StoreServerStatusInDatabaseService>();
         }
 

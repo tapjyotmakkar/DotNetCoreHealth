@@ -10,3 +10,19 @@ services:
       dockerfile: microservice1/Dockerfile
     ports:
       - 80
+
+  microservice2:
+    image: microservice2
+    build:
+      context: .
+      dockerfile: microservice2/Dockerfile
+    ports:
+      - 80
+
+  serverstatusservice:
+    image: serverstatusservice
+    build:
+      context: .
+      dockerfile: ServerStatusService/Dockerfile
+    ports:
+      - 80

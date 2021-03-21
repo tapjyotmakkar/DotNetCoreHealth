@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "5fLbPveCHFkFZCFueoO0KNEEGVC8PGXE/o5C/kQCyKmPHgAkxtbNxHn0jzTy3TK0K++sjI90bakUKlhyxURVsg==",
+  "dgSpecHash": "YcofiRRFM5m6fSEaCTUgr5Qd3QjHe7nhyRnEXJp0kULmqxyNl2JZ8zpMEH0N/T93bXFUHpx5UQ7WCCSNV2mo/Q==",
   "success": true,
-  "projectFilePath": "C:\\Work\\insight\\microservice1\\microservice1.csproj",
+  "projectFilePath": "C:\\Work\\insight\\DotNetCoreHealth\\microservice1\\microservice1.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
