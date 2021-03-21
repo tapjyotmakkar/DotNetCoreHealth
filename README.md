@@ -13,21 +13,25 @@
 # Problem statement
 
 ## Part1
+    You are a developer for a company (ServerHosting Co) and have been tasked with developing a web-service that will provide server status data for another company (XYZ Co) to consume. You need to provide a functioning web-service to serve the data for consumption by XYZ Co. The data should include a list of servers and whether they were online or offline at a particular time (this data can be faked but should be stored & retrieved from some form of storage).
 
-    Webservice that provides server status for a list of servers at a particular time from storage
+## Assumptions
+* The list of servers are microservice1 and microservice2 deployed on a kubernetes cluster in Azure
+* These microservices could be healthy(online) / unhealthy(offline) at any point during the day and they expose this information via /health endpoints
+* There is another webservice on the same k8 cluster with a public api that clients can call which provides them server statuses for microservice1 and microservice2 at a particular time from sql server
 
 ## Solution
-
-* have worked under the assumption that the list of servers could be __microservices1__ and __microservice2__ on a k8 cluster that could be healthy / unhealthy at any point during the day and they expose this information on their /health endpoints
-* have simulated healthy/unhealthy behavior in these microservice by overriding inbuilt HealthChecks available on __Microsoft.Extensions.Diagnostics.HealthChecks__
-* using a background hosted service every 10 seconds I swap them between being healthy/unhealthy
-* on the same k8 cluster ServerStatusService is a health monitoring service exposed publically http://20.193.32.243/serverstatus that fetches the last 5 server statuses as of today for microservice1 and microservice2 from a table in the database
-* __ServerStatusService__ also has background hosted service that polls microservice1 and microservice2 on the /health endpoints and writes health data in the sql database
+* have simulated healthy/unhealthy behavior in microservice1 and microservice2 by integrating inbuilt HealthChecks available on __Microsoft.Extensions.Diagnostics.HealthChecks__
+* a background hosted service is alternating the health of microservice1 and microservice2 every 10 seconds
+* deployed both of the above microservices to k8 cluster
+* on the same k8 cluster __ServerStatusService__ is a health monitoring service exposed publically http://20.193.32.243/serverstatus that fetches the last 5 server statuses as of today for microservice1 and microservice2 from a table in the database
+* __ServerStatusService__ also has a background hosted service that polls microservice1 and microservice2 on the /health endpoints and writes health data in the sql database
 
 
 ## Part2
 
-    Integrate with server status API and show status data on a wide variety of screen sizes and devices
+    You are a developer for a company (XYZ Co) and you are writing a small web application that shows the status of the servers that host your software. You need to integrate with the Server API provided by (ServerHosting Co) to get this information. The information should be presented in an application that can be accessed on a wide variety of devices and screen sizes. Ideally this data should stay as up to date as possible.
+
 
 ## Solution
 
