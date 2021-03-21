@@ -56,3 +56,10 @@ frontend angular app can be brought up by navigating to __/server-status-webapp_
 * create a kubernetes service to host all the artifacts
 
     <img src="https://github.com/tapjyotmakkar/DotNetCoreHealth/blob/master/k8_resources.JPG">
+
+* k8 deployment scripts
+
+        deploy-microservice1-aks.yml
+        deploy-microservice2-aks.yml
+        deploy-serverstatusservice-aks.yml
+        deploy-serverstatusweb-aks.yml
