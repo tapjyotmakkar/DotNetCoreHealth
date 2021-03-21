@@ -21,8 +21,8 @@ namespace microservice1
 
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
         {
-            var _timer = new Timer(TimerCallback, null, 0, 1000);
-            await Task.Delay(TimeSpan.FromMinutes(1), stoppingToken);
+            var _timer = new Timer(TimerCallback, null, 0, 10000);
+            await Task.CompletedTask;
         }
 
         private void TimerCallback(object sender)
