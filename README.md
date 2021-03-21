@@ -35,7 +35,7 @@
 
 ## Solution
 
-* have introduced the __server-status-webapp__ angular app to display the server statuses on the UI here http://20.40.125.157/
+* have introduced the __server-status-webapp__ angular app to display the server statuses on the UI here http://20.40.125.157/, __please refresh and you would see new statuses flowing in every 10 seconds__
 * leveraged __bootstrap__ to make the UI responsive
 * used inbuilt angular htppclient to call the publically exposed /serverstatus endpoint by __ServerStatusService__ as CORS is enabled on the service
                                                                                                                                                                                 
