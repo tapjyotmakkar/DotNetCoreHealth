@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: serverstatusservice
-          image: tjdockeracr.azurecr.io/serverstatusservice:v2
+          image: tjdockeracr.azurecr.io/serverstatusservice:v3
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 80

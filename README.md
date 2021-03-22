@@ -42,7 +42,7 @@
 # Running locally
  backend services can be brought up in docker containers locally from the root of the porject by executing
 
-        docker-compose -f .\docker-compose.yml --build
+        docker-compose -f .\docker-compose.yml up --build
 
 frontend angular app can be brought up by navigating to __/server-status-webapp__ executing
 
